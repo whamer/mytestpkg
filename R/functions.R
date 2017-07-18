@@ -12,7 +12,7 @@ iseven=function(x){
   if(x %% 2 == 0){
     asd="Indeed it is an even number!"
   }else{
-    asd="Of course not you fool!"
+    asd="Of course not you silly fool!"
   }
   return(asd)
 }
