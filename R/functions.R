@@ -1,6 +1,6 @@
 #' iseven
 #'
-#' @param x number to test if it is even or not
+#' @param x number to test if it is even or not or is it?
 #'
 #' @return a character
 #' @export
