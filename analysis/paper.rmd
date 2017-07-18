@@ -1,0 +1,32 @@
+---
+title: "Fancy Paper"
+author: 
+ - Wolfgang Hamer
+date: '`r Sys.Date()`'
+output: bookdown::html_document2
+bibliography: my_references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(mytestpkg)
+```
+
+## Example of function whatever
+
+As @Adams1986 stated it is important to be insulted if you do not recognise an even number:
+
+```{r}
+iseven(3)
+```
+
+Also it is important to have a function which tells you if the number is even:
+
+```{r}
+iseven(2)
+```
+
+
