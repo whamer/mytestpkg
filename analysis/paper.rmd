@@ -29,7 +29,7 @@ Also it is important to have a function which tells you if the number is even:
 iseven(2)
 ```
 
-As you see.
+As you see nothing.
 
 Now in Figure \@ref(fig:funplot) a plot [@Addiscott1977].
 
