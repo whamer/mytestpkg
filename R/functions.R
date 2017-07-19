@@ -18,4 +18,44 @@ iseven=function(x){
 }
 
 
-Huhu ^^
+
+#' returnname
+#'
+#' @param x a character string
+#'
+#' @return a returned character string
+#' @export
+#'
+#' @examples
+#' returnname("Wolfgang")
+
+returnname=function(x){
+  asd=NA
+  for(i in nchar(x):1){
+    asd=c(asd,substr(x,i,i))
+  }
+  asd=asd[-1]
+  asd=paste(asd, sep="", collapse="")
+  return(asd)
+}
+
+
+#' pipeme
+#'
+#' @param dataset a dataframe
+#' @param column a columncontent as character
+#'
+#' @return a column vector
+#' @export
+#'
+#' @examples
+#' asd=data.frame(Values=c(1,2,3,4),else=c(2,3,4,5))
+#' pipeme(asd,"val")
+#'
+#' @import tidyverse
+
+pipeme=function(dataset,column,value){
+  dataset %>%
+    select(contains(column))
+    #filter_(eval(paste("~", column)) == value)
+}
