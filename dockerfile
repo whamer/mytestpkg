@@ -6,6 +6,6 @@ COPY . /mytestpkg
 
 RUN . /etc/environment \
 
-  && R --vanilla "devtools::install('mytestpkg',dep=TRUE)" \
+&& R --vanilla "devtools::install('/mytestpkg',dep=TRUE)" \
 
-  && R --vanilla "rmarkdown::render('mytestpkg/analysis/paper.rmd')"
+&& R --vanilla "rmarkdown::render('/mytestpkg/analysis/paper.rmd')"
