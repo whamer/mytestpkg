@@ -29,4 +29,18 @@ Also it is important to have a function which tells you if the number is even:
 iseven(2)
 ```
 
-As you can clearly see.
+
+As you see clearly see:
+
+Now in Figure \@ref(fig:funplot) a plot [@Addiscott1977].
+
+```{r funplot, fig.cap="funplot"}
+plot(1,1,col="white")
+text(1,1,returnname("Pendelhubstichsäge"))
+```
+
+```{r}
+asd=data.frame(Values=c(1,2,3,4),else=c(2,3,4,5))
+pipeme(asd,"val")
+```
+
