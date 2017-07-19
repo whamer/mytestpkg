@@ -4,7 +4,7 @@ Title: Demonstrates concepts
 Version: 0.1.0
 Author: Wolfgang Hamer
 Maintainer: Wolfgang Hamer <hamer@geographie.uni-kiel.de>
-Description: This compendium contains code and data for the publication in <http://www.sciencedirect.com>.
+Description: This compendium contains code and data for the publication in <http://www.sciencedirect.com>. The version of the compendium that has the published results is at <doi:xxx>
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
