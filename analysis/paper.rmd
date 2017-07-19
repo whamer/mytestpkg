@@ -29,4 +29,4 @@ Also it is important to have a function which tells you if the number is even:
 iseven(2)
 ```
 
-As you see.
+As you can clearly see.
