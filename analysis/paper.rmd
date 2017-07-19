@@ -30,7 +30,7 @@ iseven(2)
 ```
 
 
-As you see clearly see:
+As you can clearly NOT see:
 
 Now in Figure \@ref(fig:funplot) a plot [@Addiscott1977].
 
