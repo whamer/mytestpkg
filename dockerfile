@@ -6,7 +6,7 @@ COPY . /mytestpkg
 
 RUN . /etc/environment \
 
-  && ls
+  && ls \
 
   && R --vanilla "devtools::install('mytestpkg',dep=TRUE)" \
 
