@@ -44,4 +44,9 @@ text(1,1,returnname("Pendelhubstichsäge"))
 asd=data.frame(Values=c(1,2,3,4),else=c(2,3,4,5))
 pipeme(asd,"val")
 ```
+```{r}
+library(binford)
+data(LRB)
+knitr::kable(head(LRB))
+```
 
