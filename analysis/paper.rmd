@@ -9,6 +9,7 @@ bibliography: my_references.bib
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+#checkpoint::checkpoint("2017-07-20")
 ```
 
 ```{r}
@@ -38,15 +39,5 @@ Now in Figure \@ref(fig:funplot) a plot [@Addiscott1977].
 ```{r funplot, fig.cap="funplot"}
 plot(1,1,col="white")
 text(1,1,returnname("Pendelhubstichsäge"))
-```
-
-```{r}
-asd=data.frame(Values=c(1,2,3,4),else=c(2,3,4,5))
-pipeme(asd,"val")
-```
-```{r}
-library(binford)
-data(LRB)
-knitr::kable(head(LRB))
 ```
 
