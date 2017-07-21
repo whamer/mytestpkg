@@ -41,3 +41,86 @@ plot(1,1,col="white")
 text(1,1,returnname("Pendelhubstichsäge"))
 ```
 
+## Point pattern
+
+```{r}
+harran=read.table("../data/Sites_HarranPlain.csv",
+           sep=",",header = TRUE)
+str(harran)
+
+```
+
+## Spatstat
+
+```{r}
+library(sp)
+coordinates(harran)=~X+Y
+proj4string(harran)=CRS("+init=epsg:4326")
+
+harran=spTransform(harran,CRSobj = CRS("+init=epsg:32637"))
+
+
+library(spatstat)
+harran_ppp=ppp(x=harran@coords[,1],
+               y=harran@coords[,2],
+               window=owin(xrange=harran@bbox[1,],
+                           yrange=c(min(harran@bbox[2,]),
+                                    min(harran@bbox[2,])+52000)))
+               
+str(harran_ppp)
+plot(harran_ppp)
+
+```
+
+## Duplicated vlaues
+
+```{r}
+harran_ppp=harran_ppp[!duplicated.ppp(harran_ppp)] 
+plot(harran_ppp)
+
+harran_ppp_nn=nndist(harran_ppp)
+hist(harran_ppp_nn)
+```
+
+## Kernel density
+
+```{r}
+harran_kde=density.ppp(harran_ppp,sigma=mean(harran_ppp_nn))
+plot(harran_kde)
+
+#Which sigma to select?
+bw.ppl(harran_ppp)
+plot(bw.ppl(harran_ppp),xlim=c(2000,5000))
+bw.diggle(harran_ppp)
+
+
+
+
+
+library(raster)
+dem=raster("../data/dem.tif")
+
+#library(rgdal)
+#dem=readGDAL("data/dem.tif")
+
+im_dem=as.im(
+  as.image.SpatialGridDataFrame(
+    as(dem,"SpatialGridDataFrame")))
+
+harran_rhohat=rhohat(harran_ppp, im_dem, bw=200);plot(harran_rhohat)
+
+rho_dem=predict(harran_rhohat);plot(rho_dem)
+
+diff_rho=harran_kde-rho_dem;plot(diff_rho)
+
+#harran_rpoispp=rpoispp(
+  #harran_ppp$n/area.owin(as.owin(harran_kde)), 
+  #win=Window(harran_ppp))
+harran_rpoispp=rpoispp(ex=harran_ppp)
+
+plot(harran_ppp)
+points(harran_rpoispp,col="green")
+
+
+```
+

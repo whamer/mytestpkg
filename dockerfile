@@ -6,6 +6,8 @@ COPY . /mytestpkg
 
 RUN . /etc/environment \
 
-&& R --vanilla "devtools::install('/mytestpkg',dep=TRUE)" \
+ && apt-get update -y \
+ && apt-get install -y libudunits2-dev libgdal-dev libgsl0-dev gdal-bin libgeos-dev libpng-dev libproj-dev \
 
-&& R --vanilla "rmarkdown::render('/mytestpkg/analysis/paper.rmd')"
+ && R -e "options(repos='https://mran.microsoft.com/snapshot/2017-07-20'); devtools::install('/mytestpkg', dep = TRUE)" \
+ && R --vanilla "rmarkdown::render('/mytestpkg/analysis/paper.Rmd')"
