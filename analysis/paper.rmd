@@ -150,4 +150,10 @@ plot(harran_ke)
 
 ```
 
+## Inhomogeneous G/F/K
+
+```{r}
+harran_gi=Ginhom(harran_ppp,lambda=predict(harran_rhohat))
+plot(harran_gi)
+```
 

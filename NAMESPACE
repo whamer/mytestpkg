@@ -2,4 +2,3 @@
 
 export(iseven)
 export(returnname)
-import(tidyverse)
