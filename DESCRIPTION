@@ -8,6 +8,6 @@ Description: This compendium contains code and data for the publication in <http
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: dplyr, magrittr,spatstat, raster, rgdal, rmarkdown, knitr, bookdown, readr, binford
+Imports: dplyr, magrittr,spatstat, raster, rgdal, rmarkdown, knitr, bookdown, readr, binford, tidyverse
 RoxygenNote: 6.0.1
 Suggests: testthat
