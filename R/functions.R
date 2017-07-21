@@ -39,23 +39,3 @@ returnname=function(x){
   return(asd)
 }
 
-
-#' pipeme
-#'
-#' @param dataset a dataframe
-#' @param column a columncontent as character
-#'
-#' @return a column vector
-#' @export
-#'
-#' @examples
-#' asd=data.frame(Values=c(1,2,3,4),else=c(2,3,4,5))
-#' pipeme(asd,"val")
-#'
-#' @import tidyverse
-
-pipeme=function(dataset,column,value){
-  dataset %>%
-    select(contains(column))
-    #filter_(eval(paste("~", column)) == value)
-}
