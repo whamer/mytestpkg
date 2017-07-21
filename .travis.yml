@@ -18,4 +18,4 @@ addons:
       - libproj-dev
 script:
   - Rscript -e "devtools::install()"
-  - Rscript -e "rmarkdown::render('analysis/paper.Rmd')"
+  - Rscript --vanilla "rmarkdown::render('analysis/paper.Rmd')"

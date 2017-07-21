@@ -124,3 +124,30 @@ points(harran_rpoispp,col="green")
 
 ```
 
+##Second order effects
+
+```{r}
+harran_g=Gest(harran_ppp)
+str(harran_g)
+#r distance measure
+plot(harran_g)
+# closest neighbours expected (blue) vs found (others) if found higher than expected = cluster
+harran_ge=envelope(harran_ppp,fun="Gest",nsim=100)
+plot(harran_ge)
+
+harran_f=Fest(harran_ppp)
+plot(harran_f)
+harran_fe=envelope(harran_ppp,fun="Fest",nsim=1000)
+plot(harran_fe)
+
+harran_k=Kest(harran_ppp)
+plot(harran_k)
+harran_ke=envelope(harran_ppp,fun="Kest",nsim=1000)
+plot(harran_ke)
+
+
+
+
+```
+
+
